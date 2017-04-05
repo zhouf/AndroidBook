@@ -1,3 +1,4 @@
-# My Awesome Book
+# Android 实验操作指导手册
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这是一个课程的实验指导手册，记录操作步骤，供学习和课后参考。开发平台基于AndroidStudio2.3
+
