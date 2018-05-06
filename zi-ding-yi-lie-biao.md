@@ -6,12 +6,13 @@
 
 第一步：创建列表页面
 
-创建一个RateListActivity2页面，继承于ListActivity，并添加如下三个属性
+创建一个RateListActivity页面，继承于ListActivity，并添加如下三个属性
 
 ```
 Handler handler;
 private ArrayList<HashMap<String, String>> listItems; // 存放文字、图片信息
 private SimpleAdapter listItemAdapter; // 适配器
+private int msgWhat = 7;
 ```
 
 listItems为一个列表集合，其中每个元素为一个Map对象，在Map对象中包含有用于列表显示的数据项，listItemAdapter适配器用于关联数据和布局文件。
@@ -102,42 +103,31 @@ public void run() {
 	List<HashMap<String, String>> rateList = new ArrayList<HashMap<String, String>>();
 	
 	try {
-		URL url = new URL("http://www.usd-cny.com/icbc.htm");
-		HttpURLConnection http = (HttpURLConnection) url.openConnection();
-		InputStream in = http.getInputStream();
-		
-		String webStr = IOUtils.toString(in,"gb2312");
-		
-		//Log.i("run","webStr:" + webStr);
-		Document doc = Jsoup.parse(webStr);
-		
-		Elements tbs = doc.getElementsByClass("tableDataTable");
-		Element table = tbs.get(0);
-		
-		Elements tds = table.getElementsByTag("td");
-		for (int i = 1; i < tds.size(); i+=5) {
-			Element td = tds.get(i);
-			Element td2 = tds.get(i+3);
-			
-			String tdStr = td.text();
-			String pStr = td2.text();
-			
-			HashMap<String, String> map = new HashMap<String, String>();
-			map.put("ItemTitle", tdStr);
-			map.put("ItemDetail", pStr);
-			
-			rateList.add(map);
-			
-			Log.i("td",tdStr + "=>" + pStr);
-		}
-		marker = true;
-	} catch (MalformedURLException e) {
-		Log.e("www", e.toString());
-		e.printStackTrace();
-	} catch (IOException e) {
-		Log.e("www", e.toString());
-		e.printStackTrace();
-	}
+            Document doc = Jsoup.connect("http://www.usd-cny.com/icbc.htm").get();
+            Elements tbs = doc.getElementsByClass("tableDataTable");
+            Element table = tbs.get(0);
+            Elements tds = table.getElementsByTag("td");
+            for (int i = 6; i < tds.size(); i+=6) {
+                Element td = tds.get(i);
+                Element td2 = tds.get(i+3);
+                String tdStr = td.text();
+                String pStr = td2.text();
+                
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put("ItemTitle", tdStr);
+                map.put("ItemDetail", pStr);
+                
+                rateList.add(map);
+                Log.i("td",tdStr + "=>" + pStr);
+            }
+            marker = true;
+        } catch (MalformedURLException e) {
+            Log.e("www", e.toString());
+            e.printStackTrace();
+        } catch (IOException e) {
+            Log.e("www", e.toString());
+            e.printStackTrace();
+        }
 	
 	Message msg = handler.obtainMessage();
 	msg.what = msgWhat;
