@@ -8,9 +8,7 @@
 
 ```
 public class MyList2Activity extends ListActivity implements AdapterView.OnItemClickListener {
-
     ...
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ...
