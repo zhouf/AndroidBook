@@ -27,7 +27,7 @@ public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     Log.i(TAG, "onItemClick: view=" + view);
     Log.i(TAG, "onItemClick: position=" + position);
     Log.i(TAG, "onItemClick: id=" + id);
-    
+
     //从ListView中获取选中数据
     HashMap<String,String> map = (HashMap<String, String>) getListView().getItemAtPosition(position);
     String titleStr = map.get("ItemTitle");
@@ -155,11 +155,9 @@ public class RateCalcActivity extends AppCompatActivity {
 
 处理列表项长按和单击类似，只是实现的方法不同，长按需要做如下处理
 
-为ListView控件添加事件监听.setOnItemLongClickListener(this);
-
-实现接口AdapterView.OnItemLongClickListener
-
-实现接口方法onItemLongClick
+* 为ListView控件添加事件监听.setOnItemLongClickListener\(this\);
+* 实现接口AdapterView.OnItemLongClickListener
+* 实现接口方法onItemLongClick
 
 
 
