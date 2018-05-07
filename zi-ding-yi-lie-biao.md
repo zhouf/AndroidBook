@@ -52,19 +52,19 @@ listItems为一个列表集合，其中每个元素为一个Map对象，在Map�
 
 ```
 private void initListView() {
-	listItems = new ArrayList<HashMap<String, String>>();
-	for (int i = 0; i < 10; i++) {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("ItemTitle", "Rate： " + i); // 标题文字
-		map.put("ItemDetail", "detail" + i); // 详情描述
-		listItems.add(map);
-	}
-	// 生成适配器的Item和动态数组对应的元素
-	listItemAdapter = new SimpleAdapter(this, listItems, // listItems数据源
-			R.layout.list_item, // ListItem的XML布局实现
-			new String[] { "ItemTitle", "ItemDetail" }, 
-			new int[] { R.id.itemTitle, R.id.itemDetail } 
-	);
+    listItems = new ArrayList<HashMap<String, String>>();
+    for (int i = 0; i < 10; i++) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "Rate： " + i); // 标题文字
+        map.put("ItemDetail", "detail" + i); // 详情描述
+        listItems.add(map);
+    }
+    // 生成适配器的Item和动态数组对应的元素
+    listItemAdapter = new SimpleAdapter(this, listItems, // listItems数据源
+            R.layout.list_item, // ListItem的XML布局实现
+            new String[] { "ItemTitle", "ItemDetail" }, 
+            new int[] { R.id.itemTitle, R.id.itemDetail } 
+    );
 }
 ```
 
@@ -98,11 +98,11 @@ t.start(); // 开启线程
 
 ```
 public void run() {
-	Log.i("thread","run.....");
-	boolean marker = false;
-	List<HashMap<String, String>> rateList = new ArrayList<HashMap<String, String>>();
-	
-	try {
+    Log.i("thread","run.....");
+    boolean marker = false;
+    List<HashMap<String, String>> rateList = new ArrayList<HashMap<String, String>>();
+
+    try {
             Document doc = Jsoup.connect("http://www.usd-cny.com/icbc.htm").get();
             Elements tbs = doc.getElementsByClass("tableDataTable");
             Element table = tbs.get(0);
@@ -112,11 +112,11 @@ public void run() {
                 Element td2 = tds.get(i+3);
                 String tdStr = td.text();
                 String pStr = td2.text();
-                
+
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("ItemTitle", tdStr);
                 map.put("ItemDetail", pStr);
-                
+
                 rateList.add(map);
                 Log.i("td",tdStr + "=>" + pStr);
             }
@@ -128,19 +128,19 @@ public void run() {
             Log.e("www", e.toString());
             e.printStackTrace();
         }
-	
-	Message msg = handler.obtainMessage();
-	msg.what = msgWhat;
-	if(marker){
-		msg.arg1 = 1;
-	}else{
-		msg.arg1 = 0;
-	}
-	
-	msg.obj = rateList;
-	handler.sendMessage(msg);
 
-	Log.i("thread","sendMessage.....");
+    Message msg = handler.obtainMessage();
+    msg.what = msgWhat;
+    if(marker){
+        msg.arg1 = 1;
+    }else{
+        msg.arg1 = 0;
+    }
+
+    msg.obj = rateList;
+    handler.sendMessage(msg);
+
+    Log.i("thread","sendMessage.....");
 }
 ```
 
@@ -150,20 +150,62 @@ public void run() {
 
 ```
 public void handleMessage(Message msg) {
-	if(msg.what == msgWhat){
-		List<HashMap<String, String>> retList = (List<HashMap<String, String>>) msg.obj;
-		SimpleAdapter adapter = new SimpleAdapter(RateListActivity.this, retList, // listItems数据源
-				R.layout.list_item, // ListItem的XML布局实现
-				new String[] { "ItemTitle", "ItemDetail" }, 
-				new int[] { R.id.itemTitle, R.id.itemDetail });
-		setListAdapter(adapter);
-		Log.i("handler","reset list...");
-	}
-	super.handleMessage(msg);
+    if(msg.what == msgWhat){
+        List<HashMap<String, String>> retList = (List<HashMap<String, String>>) msg.obj;
+        SimpleAdapter adapter = new SimpleAdapter(RateListActivity.this, retList, // listItems数据源
+                R.layout.list_item, // ListItem的XML布局实现
+                new String[] { "ItemTitle", "ItemDetail" }, 
+                new int[] { R.id.itemTitle, R.id.itemDetail });
+        setListAdapter(adapter);
+        Log.i("handler","reset list...");
+    }
+    super.handleMessage(msg);
 }
 ```
 
 至此，用于获取实时数据并显示的操作完成。
+
+### 使用自定义Adapter实现
+
+在实现自定义列表时，也可以使用自定义Adapter实现，过程如下。首先创建一个adapter继承ArrayAdapter
+
+```
+public class MyAdapter extends ArrayAdapter {
+
+    private static final String TAG = "MyAdapter";
+
+    public MyAdapter(Context context, int resource, ArrayList<HashMap<String,String>> list) {
+        super(context, resource, list);
+    }
+
+    @NonNull
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View itemView = convertView;
+        if(itemView == null){
+            itemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
+        }
+
+        Map<String,String> map = (Map<String, String>) getItem(position);
+        TextView title = (TextView) itemView.findViewById(R.id.itemTitle);
+        TextView detail = (TextView) itemView.findViewById(R.id.itemDetail);
+
+        title.setText("Title:" + map.get("ItemTitle"));
+        detail.setText("detail:" + map.get("ItemDetail"));
+
+        return itemView;
+    }
+}
+```
+
+通过构造方法传入数据list，此处为了兼容List数据，List里还是使用Map数据集合，最主要的方法就是getView，为列表提供显示所需要的视图，通过加载布局文件构造View并填充相应的数据，之后修改Activity页面，使用自定义的MyAdapter
+
+```
+MyAdapter myAdapter = new MyAdapter(this,R.layout.list_item,listItems);
+this.setListAdapter(myAdapter);
+```
+
+通常情况自定义的Adapter中使用的数据类型为自定义实体List&lt;Object&gt;
 
 
 
