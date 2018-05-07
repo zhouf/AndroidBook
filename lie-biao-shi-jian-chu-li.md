@@ -159,5 +159,52 @@ public class RateCalcActivity extends AppCompatActivity {
 * 实现接口AdapterView.OnItemLongClickListener
 * 实现接口方法onItemLongClick
 
+实现方法如下
 
+```
+public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+    Log.i(TAG, "onItemLongClick: 长按列表项position=" + position);
+    return true;
+}
+```
+
+当此方法返回false时，单击事件会在松开鼠标后响应，当返回true时，会屏蔽掉单击事件。
+
+如果希望长按时删除列表数据项，可进行如下操作
+
+* 修改列表数据集，在数据集中删除数据
+* 调用adapter更新列表
+
+代码如下
+
+```
+listItems.remove(position);
+listItemAdapter.notifyDataSetChanged();
+```
+
+为了防止用户误操作，可以在删除时加上确认对话框，此处调用AlertDialog.Builder来实现，创建一个对话框构造器，然后在构造器里设置对话框属性，最后再调用显示，实现代码如下
+
+```
+public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+    Log.i(TAG, "onItemLongClick: 长按列表项position=" + position);
+    //删除操作
+    //构造对话框进行确认操作
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("提示").setMessage("请确认是否删除当前数据").setPositiveButton("是",new DialogInterface.OnClickListener(){
+
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            Log.i(TAG, "onClick: 对话框事件处理");
+            listItems.remove(position);
+            listItemAdapter.notifyDataSetChanged();
+        }
+    }).setNegativeButton("否",null);
+    builder.create().show();
+    Log.i(TAG, "onItemLongClick: size=" + listItems.size());
+
+    return true;
+}
+```
+
+需要注意的是，在onClick方法中调用position变量时，修改变量为final
 
