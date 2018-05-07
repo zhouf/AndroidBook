@@ -37,7 +37,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ## 空数据显示
 
-当列表数据为空时，可设置列表显示一个视图如TextView，在`activitymylist.xml中添加一个TextView控件如下`
+当列表数据为空时，可设置列表显示一个视图如TextView，在`activity_my_list.xml`中添加一个TextView控件如下
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
