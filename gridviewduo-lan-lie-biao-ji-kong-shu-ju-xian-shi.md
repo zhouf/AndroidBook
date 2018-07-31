@@ -1,5 +1,9 @@
 ## GridView显示多栏列表
 
+> 实验目标
+>
+> 掌握GridView多栏列表显示，表空数据显示处理以及数据删除处理
+
 如果要显示多栏列表，可用GridView实现，在页面布局文件里把ListView替换成GridView
 
 ```
