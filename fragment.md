@@ -236,6 +236,22 @@ public class FrameActivity extends FragmentActivity {
 
 此处只是用渐变的方式做了处理，shape2和shape3的颜色方向刚好相反，也可以通过调换startColor和endColor来实现
 
+如果使用纯色填充，shape2和shape3分别如下
+```
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="#CCCCFF" />
+</shape>
+```
+```
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="#99CCCC" />
+</shape>
+```
+
+
+
 因三个Radio按钮风格都要修改，可在res\values\style.xml中添加一个按钮样式rg\_btn\_style，定义如下
 
 ```
@@ -245,7 +261,6 @@ public class FrameActivity extends FragmentActivity {
     <item name="android:layout_gravity">center</item>
     <item name="android:layout_weight">2</item>
     <item name="android:textSize">10sp</item>
-    <item name="android:textColor">#11ffff</item>
     <item name="android:drawablePadding">1dp</item>
     <item name="android:layout_width">match_parent</item>
     <item name="android:padding">7dp</item>
