@@ -7,8 +7,11 @@
 * [04完成汇率配置页面](wan-cheng-hui-lv-pei-zhi-ye-mian.md)
 * [05完成汇率保存](bao-cun-hui-lv.md)
 * [06使用多线程获取网络数据](huo-qu-wang-luo-shu-ju.md)
+* [07解析汇率](jie-xi-hui-lv.md)
+* [08Activity生命周期](activity-lifecycle.md)
+* [09设置汇率更新频率](geng-xin-pin-lv.md)
+* [10列表的显示](android-list.md)
 * [10自定义列表](zi-ding-yi-lie-biao.md)
 * [11-1列表事件处理](lie-biao-shi-jian-chu-li.md)
 * [11-2GridView多栏列表及空数据显示](gridviewduo-lan-lie-biao-ji-kong-shu-ju-xian-shi.md)
-
 
