@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [简介](README.md)
 * [01完成一个生日贺卡](chapter1.md)
 * [02计分程序](02ji-fen-cheng-xu.md)
 * [03汇率计算](hui-lv-ji-suan.md)
