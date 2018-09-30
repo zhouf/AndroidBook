@@ -14,7 +14,7 @@ implementation 'org.jsoup:jsoup:1.11.3'
 ```
 Document doc = Jsoup.parse(html);
 ```
-Jsoup除了接收html字串之外，也可以接收url地址，也可以直接把需要解析的url地址交给Jsoup，此处从http://www.usd-cny.com/bankofchina.htm获取数据，解析代码如下
+Jsoup除了接收html字串之外，也可以接收url地址，也可以直接把需要解析的url地址交给Jsoup，此处从http://www.usd-cny.com/bankofchina.htm 获取数据，解析代码如下
 ```
 Bundle bundle = new Bundle();
 Document doc = null;
@@ -94,7 +94,9 @@ editor.apply();
 ### 扩展练习
 
 如果数据来源为其它页面，试着解析出需要的数据
+
 http://www.usd-cny.com/icbc.htm
+
 http://www.boc.cn/sourcedb/whpj/
 
 
