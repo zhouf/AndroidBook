@@ -90,4 +90,6 @@ handler = new Handler(){
 
 ### 扩展练习
 
+通过在Activity中放入ListView控件实现列表的显示
+
 ### 参考材料
