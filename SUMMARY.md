@@ -17,4 +17,5 @@
 * [12SQLite数据库](shi-yong-sqlite-shu-ju-ku.md)
 * [13-1Fragment介绍](fragment.md)
 * [13-2ViewPager使用](viewpager.md)
-* [配置页面](preferencesetting.md)
+* [14配置页面](preferencesetting.md)
+* [15投票应用小案例](vote_app.md)
