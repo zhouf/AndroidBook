@@ -117,6 +117,10 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 implementation 'com.android.support:design:25.3.1'
 ```
+> 注意事项
+>
+> design库也会不断出新版本，需要注意与当前sdk版本相匹配，可以通过 https://mvnrepository.com/artifact/com.android.support/design?repo=google 查询
+
 在`onCreate()`方法中添加控件访问，并绑定TabLayout对象和ViewPager对象
 ```
 TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
