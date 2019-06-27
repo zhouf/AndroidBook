@@ -120,7 +120,14 @@ protected void onCreate(Bundle savedInstanceState) {
     },3000);//3000毫秒后执行，即3秒跳转
 }
 ```
-如果欢迎面需要实现全屏，不需要TitleBar的话，可以配置在activity配置中加入AppTheme.NoActionBar实现
+如果欢迎面需要实现全屏，不需要TitleBar的话，可以配置在activity配置中加入theme实现
+```
+<style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+</style>
+```
+在AndroidManifest.xml中使用该配置
 ```
 <activity android:name=".WelcomeActivity"
     android:theme="@style/AppTheme.NoActionBar">
@@ -130,6 +137,7 @@ protected void onCreate(Bundle savedInstanceState) {
     </intent-filter>
 </activity>
 ```
+也可直接使用Theme.AppCompat.NoActionBar
 
 
 
