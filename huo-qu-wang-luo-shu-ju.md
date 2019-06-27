@@ -102,6 +102,37 @@ private String inputStream2String(InputStream inputStream) throws IOException {
 测试运行程序 ，查看在Logcat中是否已有输入获取的文本内容
 
 
+### 使用Handler实现欢迎页
+
+Handler可以用于处理消息，其中postDelayed可以用于延时消息传送，可以利用此功能实现欢迎页面，达到延时跳转到首页的效果，此处假定从WelcomeActivity跳转到MainActivity，在onCreate中可加入如下代码
+```
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_welcome);
+
+    new Handler().postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            Intent mainIntent = new Intent(WelcomeActivity.this, MainActivity.class);
+            startActivity(mainIntent);
+            finish();
+        }
+    },3000);//3000毫秒后执行，即3秒跳转
+}
+```
+如果欢迎面需要实现全屏，不需要TitleBar的话，可以配置在activity配置中加入AppTheme.NoActionBar实现
+```
+<activity android:name=".WelcomeActivity"
+    android:theme="@style/AppTheme.NoActionBar">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+```
+
+
+
 ### 扩展练习
 
 如何从已获得的数据中提取出需要的汇率数据
