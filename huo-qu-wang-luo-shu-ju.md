@@ -101,6 +101,23 @@ private String inputStream2String(InputStream inputStream) throws IOException {
 ```
 测试运行程序 ，查看在Logcat中是否已有输入获取的文本内容
 
+在新版本的SDK里不允许明文传输协议，如果使用http方式访问网络数据，会出现以下的错误提示
+```
+java.io.IOException: Cleartext HTTP traffic to www.usd-cny.com not permitted
+...
+```
+为允许当前应用支持明文传输，需要在AndroiManifest.xml里添加配置，修改application中的内容，添加`android:usesCleartextTraffic="true"`
+```
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:usesCleartextTraffic="true"
+    android:theme="@style/AppTheme">
+```
+
 
 ### 使用Handler实现欢迎页
 
