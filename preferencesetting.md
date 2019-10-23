@@ -4,6 +4,10 @@
 >
 > 学习掌握设置页面的使用，掌握页面布局的基本方法
 
+最终完成效果如下图所示
+
+![](/assets/settings.png)
+
 ### 第一步：创建设置页面
 
 在工程中新增一个Activity,SettingsActivity,并在SettingsActivity中添加PreferenceFragment的实现类

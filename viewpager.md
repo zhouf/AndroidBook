@@ -135,6 +135,23 @@ public CharSequence getPageTitle(int position) {
 ```
 此处直接用Title加上位置返回，实际应用中可以根据position确定返回的字符串
 
+### AndroidX
+
+> 按照[官方文档](https://developer.android.google.cn/jetpack/androidx?hl=en)说明 AndroidX 是对 android.support.xxx 包的整理后产物。由于之前的 support 包过于混乱，所以，Google 推出了AndroidX。
+> 在其后续版本中，会逐步放弃对 support 的升级和维护
+
+如果工程使用的是androidx库，可引入下列包
+```
+implementation 'org.xutils:xutils:3.5.0'
+implementation 'com.androidkun:XTabLayout:1.1.4'
+```
+
+也可直接使用androidx库中的ViewPager和PagerTabStrip组件来完成类似的效果
+
 ### 扩展练习：
 
+参考[官方文档](https://developer.android.google.cn/reference/kotlin/androidx/viewpager/widget/ViewPager.html?hl=en)，了解ViewPager和PagerTabStrip的使用
+
 查阅网络资料，使用小圆点进行ViewPager切换显示
+
+

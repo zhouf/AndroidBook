@@ -8,8 +8,10 @@
 
 完成一个完整的服务器端应用，可以通过Java,Go,Python,Nodejs等实现，并测试可以正常运行，自行约定与服务器的数据交换方式，可以是json,text等
 > 可下载并解压示例程序[vote.war](https://github.com/zhouf/vote/releases/download/v1.01/vote_v101.zip)并部署运行
-> 此处假设已准备好服务器，且服务器地址为：http://192.168.1.102:8080/
-> 接收数据输入接口为：http://192.168.1.102:8080/vote/GetVote
+> 
+> 此处假设已准备好服务器，且服务器地址为：[http://192.168.1.102:8080/](http://localhost:8080/)
+> 
+> 接收数据输入接口为：[http://192.168.1.102:8080/vote/GetVote](http://localhost:8080/vote/GetVote)
 可以在其它电脑上选用接口测试工具（如PostMan）测试接口是否正常工作，接口正常工作后可开始手机端的程序
 
 
