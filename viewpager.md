@@ -148,10 +148,44 @@ implementation 'com.androidkun:XTabLayout:1.1.4'
 
 也可直接使用androidx库中的ViewPager和PagerTabStrip组件来完成类似的效果
 
+
+### 关于android.support.design.widget.TabLayout无法使用
+
+在Android Studio3.5以后，可能无法使用android.support.design.widget.TabLayout，可选择com.google.android.material.tabs.TabLayout代替，如果是xml文件报错，需要确Activity和xml中的两个包一致，如果Activity中引入的是Google的，在xml中也选用Google的tablayout
+
+配置文件中引入：
+```
+implementation 'com.android.support:support-v4:29.0.2'
+implementation 'com.android.support:design:29.0.2'
+```
+activity_main.xml中部分代码
+```
+<com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff"
+        app:tabIndicatorColor="@color/design_default_color_primary"
+        app:tabIndicatorHeight="8dp"
+
+        app:tabSelectedTextColor="#000000"
+        app:tabMode="fixed"
+        app:tabBackground="@drawable/selected"
+        />
+```
+其余使用与android.support.design.widget.TabLayout相同
+
+如果使用的是AndroidX库，引用的com.android.support:design:29.0.2 可以替换成com.google.android.material:material:1.0.0
+
+详见：[Android AndroidX的迁移](https://www.jianshu.com/p/7dc111353328)
+
+
 ### 扩展练习：
 
 参考[官方文档](https://developer.android.google.cn/reference/kotlin/androidx/viewpager/widget/ViewPager.html?hl=en)，了解ViewPager和PagerTabStrip的使用
 
 查阅网络资料，使用小圆点进行ViewPager切换显示
 
+
+附：[Androidx 中的 ViewPager 与 ViewPager2](https://www.jianshu.com/p/924046eae137)
 
