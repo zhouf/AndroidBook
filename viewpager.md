@@ -189,3 +189,5 @@ activity_main.xml中部分代码
 
 附：[Androidx 中的 ViewPager 与 ViewPager2](https://www.jianshu.com/p/924046eae137)
 
+[从 ViewPager 迁移到 ViewPager2](https://developer.android.google.cn/training/animation/vp2-migration?hl=zh_cn)
+
