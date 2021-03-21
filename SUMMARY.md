@@ -20,6 +20,8 @@
 * [14配置页面](preferencesetting.md)
 * [15投票应用小案例](vote_app.md)
 
+* [Pets应用](pets.md)
+
 
 ---
 ## 补充
