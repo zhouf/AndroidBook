@@ -117,6 +117,11 @@ java.io.IOException: Cleartext HTTP traffic to www.usd-cny.com not permitted
     android:usesCleartextTraffic="true"
     android:theme="@style/AppTheme">
 ```
+如果出现如下错误
+```
+java.net.SocketException: socket failed: EPERM (Operation not permitted)
+```
+需要重置一下手机模拟器，或重新开启一个新的AVD
 
 
 ### 使用Handler实现欢迎页
