@@ -96,6 +96,7 @@ public class ItemData {
 
 </RelativeLayout>
 ```
+此处采用RalativeLayout，也可采用ConstraintLayout实现对行元素的布局设置
 
 ## 准备Adapter及ViewHolder
 
