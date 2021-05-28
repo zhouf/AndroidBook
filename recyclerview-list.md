@@ -96,7 +96,7 @@ public class ItemData {
 
 </RelativeLayout>
 ```
-此处采用RalativeLayout，也可采用ConstraintLayout实现对行元素的布局设置
+此处采用RalativeLayout布局，也可采用ConstraintLayout实现对行元素的布局设置
 
 ## 准备Adapter及ViewHolder
 
@@ -181,7 +181,7 @@ public int getItemCount() {
 
 ## 页面加载
 
-准备数据项，使用系统提交的图片资源
+准备数据项，使用系统自带的图片资源
 ```
 ItemData[] itemData = new ItemData[] {
     new ItemData("Email", android.R.drawable.ic_dialog_email),
