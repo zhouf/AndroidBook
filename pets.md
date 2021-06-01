@@ -12,7 +12,7 @@ git clone https://github.com/udacity/ud845-Pets.git
 
 3、可使用AndroidStudio中导入库的功能Get from Version Control，贴入库地址`https://github.com/udacity/ud845-Pets.git`，以及选择好本地存放路径即可
 
-如果需要修改编译sdk以及gradle版本，请查看《[更新sdk及gradle](pets_getcode.md)》
+如果需要修改编译sdk以及gradle版本，请查看《[更新sdk及gradle](modify-build-tools.md)》
 
 > 也可直接从库[https://gitee.com/mytiger/Android-Pets.git](https://gitee.com/mytiger/Android-Pets)中获取修改SDK版本后的代码
 

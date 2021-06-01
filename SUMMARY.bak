@@ -21,10 +21,9 @@
 * [14配置页面](preferencesetting.md)
 * [15投票应用小案例](vote_app.md)
 
-* [Pets应用](pets.md)
-
-
 ---
 ## 补充
 
+* [Pets应用](pets.md)
 * [提升Gradle编译速度配置](gradle-set.md)
+* [修改编译版本参数](modify-build-tools.md)
