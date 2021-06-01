@@ -587,7 +587,7 @@ public void bindView(View view, Context context, Cursor cursor) {
 
 ---
 
-## ???
+## 自动通知
 
 修改`PetProvider`，设置自动通知，当uri对应的数据项发生变化时，自动通知更新游标，修改相关方法
 **query**
