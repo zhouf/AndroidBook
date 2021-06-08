@@ -17,7 +17,6 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPage2"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,7 +124,6 @@ TabLayout控件可以显示当前ViewPager2的切换状态，也可以控制View
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPage2"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="@id/tab_layout"
