@@ -18,6 +18,8 @@
 * [12SQLite数据库](shi-yong-sqlite-shu-ju-ku.md)
 * [13-1ViewPager使用](viewpager.md)
 * [13-2ViewPager2使用](viewpager2.md)
+* [13-3CardView的使用](cardview.md)
+* [14配置页面](preferencesetting.md)
 
 
 ---
