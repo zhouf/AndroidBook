@@ -16,13 +16,14 @@
     android:orientation="vertical"
     tools:context="com.example.a105.mypage.MainActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
 </LinearLayout>
 ```
+早期版本的ViewPager来源于android.support.v4.view.ViewPager新版本建议使用androidx.viewpager.widget.ViewPager
 
 ### 第二步 准备三个切换页面
 用最简的方式创建三个Fragment页面，如下创建FirstFragment，布局如下
@@ -113,7 +114,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 
 </LinearLayout>
 ```
-在build.gradle中添加引用库
+在build.gradle中添加引用库，使用support.v4时需要加入，使用androidx包不需要添加引用（当项目使用的库为androidx库时）
 ```
 implementation 'com.android.support:design:25.3.1'
 ```
