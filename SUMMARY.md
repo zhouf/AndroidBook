@@ -19,7 +19,8 @@
 * [13-1ViewPager使用](viewpager.md)
 * [13-2ViewPager2使用](viewpager2.md)
 * [13-3CardView的使用](cardview.md)
-* [14配置页面](preferencesetting.md)
+* [14-1小圆点起始页面](bottom-circle-indicator.md)
+* [14-2配置页面](preferencesetting.md)
 * [15投票应用小案例](vote_app.md)
 
 
