@@ -156,12 +156,12 @@ public MyRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent
 @Override
 public void onBindViewHolder(@NonNull MyRecyclerAdapter.ViewHolder holder, int position) {
     final ItemData itemData = listdata[position];
-    holder.textView.setText(itemData.getInfo());
-    holder.imageView.setImageResource(itemData.getPicId());
+    holder.textView.setText(itemData.getDescription());
+    holder.imageView.setImageResource(itemData.getImgId());
     holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(),"Click: "+ itemData.getInfo(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(),"Click: "+ itemData.getDescription(),Toast.LENGTH_SHORT).show();
         }
     });
 }
