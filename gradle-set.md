@@ -41,11 +41,9 @@ distributionUrl=file:///E://Dev//Gradle//gradle-6.1.1-all.zip
 ```
 buildscript {
     repositories {
-        //google()
-        //jcenter()
-        maven{url 'http://maven.aliyun.com/repository/google'}
-        maven{url 'http://maven.aliyun.com/repository/jcenter'}
-        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
     }
 }
 ...
@@ -53,10 +51,9 @@ allprojects {
     repositories {
         //google()
         //jcenter()
-        maven{url 'http://maven.aliyun.com/repository/google'}
-        maven{url 'http://maven.aliyun.com/repository/jcenter'}
-        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public/' }
     }
 }
 ...
 ```
+> 在新的项目配置文件中，已经没有了allprojects配置

@@ -29,5 +29,6 @@
 ## 补充
 
 * [Pets应用](pets.md)
+* [样式修改](app-style.md)
 * [提升Gradle编译速度配置](gradle-set.md)
 * [修改编译版本参数](modify-build-tools.md)
