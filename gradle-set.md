@@ -41,18 +41,14 @@ distributionUrl=file:///E://Dev//Gradle//gradle-6.1.1-all.zip
 ```
 buildscript {
     repositories {
-        google()
-        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
         maven { url 'https://maven.aliyun.com/repository/public/' }
+        mavenCentral()
     }
 }
-...
-allprojects {
-    repositories {
-        //google()
-        //jcenter()
-        maven { url 'https://maven.aliyun.com/repository/public/' }
-    }
+
+plugins{
+    ....
 }
 ...
 ```
