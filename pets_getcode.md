@@ -89,7 +89,7 @@ JAVA代码` app/src/main/java/com/example/android/pets/EditorActivity.java`
 ```
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 改为
 import androidx.core.app.NavUtils;
 import androidx.appcompat.app.AlertDialog;
@@ -98,7 +98,7 @@ import androidx.appcompat.app.AppCompatActivity;
 文件` app/src/main/java/com/example/android/pets/CatalogActivity.java`
 ```
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 改为
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -297,7 +297,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -372,7 +372,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 @@ -122,10 +123,10 @@ private void insertPet() {
         int weight = Integer.parseInt(weightString);
 
