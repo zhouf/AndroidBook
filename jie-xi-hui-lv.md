@@ -8,7 +8,7 @@
 
 在工程中引入Jsoup包，修改build.gradle(Module: app)文件，在dependencies中加入引用
 ```
-implementation 'org.jsoup:jsoup:1.11.3'
+implementation 'org.jsoup:jsoup:1.15.4'
 ```
 修改run方法，将之前获取的html字串交给Jsoup解析
 ```
