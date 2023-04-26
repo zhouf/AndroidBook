@@ -99,5 +99,8 @@ http://www.usd-cny.com/icbc.htm
 
 http://www.boc.cn/sourcedb/whpj/
 
+https://chl.cn/?jinri
+
+https://c.runoob.com/rmbquot/
 
 ### 参考材料
