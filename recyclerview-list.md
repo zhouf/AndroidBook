@@ -8,7 +8,7 @@ RecyclerView是谷歌公司推出了一个用于大量数据展示的新控件�
 
 
 ## 引入RecyclerView
-在app的build.gradle文件中添加引用，目前使用androidx包
+在app的build.gradle文件中添加引用，目前使用androidx包（在API 30里已包含recycleview不需要手动引入包）
 ```
 dependencies {
     ...
@@ -71,6 +71,7 @@ public class ItemData {
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
+    android:layout_marginVertical="4dp"
     android:layout_height="?android:attr/listPreferredItemHeightLarge"
     android:background="@drawable/border">
 
@@ -97,6 +98,16 @@ public class ItemData {
 </RelativeLayout>
 ```
 此处采用RalativeLayout布局，也可采用ConstraintLayout实现对行元素的布局设置
+
+上述布局背景引用了`border.xml`配置文件，位于`res\drawable`目录，内容如下
+```
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="8dp"/>
+    <stroke android:width="1dp" android:color="@color/purple_500"/>
+    <solid android:color="#E3F2FD"/>
+</shape>
+```
 
 ## 准备Adapter及ViewHolder
 
@@ -214,7 +225,7 @@ recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.H
 ```
 则可实现水平滑动，第三个参数为是否逆转顺序，如果为true，则表示水平方向起始位置在最左端，垂直方向起始位置在最下端。如果要实现3列网络布局，可设置LayoutManager为
 ```
-recyclerView.setLayoutManager(new GridLayoutManager(this,3));
+recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 ```
 其它参数效果可自行尝试
 
