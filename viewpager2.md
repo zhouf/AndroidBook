@@ -16,7 +16,7 @@
     tools:context=".MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPage2"
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
